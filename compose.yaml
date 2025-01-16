@@ -1,0 +1,31 @@
+# version of the Compose format used by Docker Compose
+version: '3.9'
+
+# container configuration
+services:
+  # name of the service
+  mc-server:
+    # creates an image from the Dockerfile in the current directory
+    build: .
+    
+    # defines port forwarding between host and container
+    ports:
+      # hostPort:containerPort
+      # forwards port 5000 on the container to port 8888 on the host
+      # Clients that connect to port 8888 on the host communicate with port 5000 in the container
+      - 8888:5000
+    
+    # defines environment variables that are passed to the container when it starts.
+    environment:
+      # accepts the Minecraft EULA (End User License Agreement)
+      # is required by the Minecraft server to start
+      - EULA: "TRUE"
+    
+    # mounts volumes (mechanism to persistently store data) between the host and the container 
+    volumes:
+      # volume_name_local:containerPath
+      - /home/szimmermannschmutzler/docker/minecraft_server_data:/app/
+    
+    # The container will automatically restart if an error occurs that causes the container to terminate.
+    # If the container is stopped manually, it will not restart.
+    restart: on-failure
