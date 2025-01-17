@@ -19,7 +19,7 @@ services:
     environment:
       # accepts the Minecraft EULA (End User License Agreement)
       # is required by the Minecraft server to start
-      EULA: "TRUE"
+      - EULA=TRUE
     
     # mounts volumes (mechanism to persistently store data) between the host and the container 
     volumes:

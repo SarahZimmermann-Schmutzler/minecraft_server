@@ -7,9 +7,6 @@ WORKDIR /app
 # all contents of the current directory are copied to the folder named under the variable WORKDIR
 COPY . $WORKDIR
 
-# the Minecraft Server file must be made executable
-RUN chmod +x ./server.jar
-
 # port of the container that is opened for external access
 # 25565 is the standard port of the Minecraft Server
 EXPOSE 25565
