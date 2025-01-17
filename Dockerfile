@@ -7,6 +7,10 @@ WORKDIR /app
 # all contents of the current directory are copied to the folder named under the variable WORKDIR
 COPY . $WORKDIR
 
+#accepts the Minecraft EULA (End User License Agreement)
+# is required by the Minecraft server to start
+RUN echo "eula=true" > /app/eula.txt
+
 # port of the container that is opened for external access
 # 25565 is the standard port of the Minecraft Server
 EXPOSE 25565

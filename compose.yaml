@@ -16,10 +16,10 @@ services:
       - 8888:25565
     
     # defines environment variables that are passed to the container when it starts.
-    environment:
+    #environment:
       # accepts the Minecraft EULA (End User License Agreement)
       # is required by the Minecraft server to start
-      EULA: "TRUE"
+      #EULA: "TRUE"
     
     # mounts volumes (mechanism to persistently store data) between the host and the container 
     volumes:
