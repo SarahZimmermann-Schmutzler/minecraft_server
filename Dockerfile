@@ -16,4 +16,4 @@ RUN echo "eula=true" > /app/eula.txt
 EXPOSE 25565
 
 # Start the Minecraft server directly
-ENTRYPOINT ["java", "-Xmx1024M", "-Xms512M", "-jar", "server.jar", "nogui"]
+ENTRYPOINT ["java", "-Xmx1024M", "-Xms512M", "-jar", "/app/server.jar", "nogui"]
