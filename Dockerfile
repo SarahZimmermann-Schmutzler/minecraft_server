@@ -11,7 +11,8 @@ COPY . $WORKDIR
 # RUN chmod +x /app/entrypoint.sh
 
 # port of the container that is opened for external access
-EXPOSE 5000
+# 25565 is the standard port of the Minecraft Server
+EXPOSE 25565
 
 # link to the entrypoint script
 # ENTRYPOINT [ "/bin/sh", "-c", "/app/entrypoint.sh" ]
