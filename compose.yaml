@@ -24,7 +24,7 @@ services:
     # mounts volumes (mechanism to persistently store data) between the host and the container 
     volumes:
       # volume_name_local:containerPath
-      - /home/szimmermannschmutzler/docker/minecraft_server_data:/app/
+      - /home/szimmermannschmutzler/docker/minecraft_server_data:/app
     
     # The container will automatically restart if an error occurs that causes the container to terminate.
     # If the container is stopped manually, it will not restart.
