@@ -8,11 +8,11 @@ WORKDIR /app
 COPY . $WORKDIR
 
 # the Minecraft Server file must be made executable
-RUN chmod +x /app/server.jar
+RUN chmod +x ./server.jar
 
 # port of the container that is opened for external access
 # 25565 is the standard port of the Minecraft Server
 EXPOSE 25565
 
 # Start the Minecraft server directly
-ENTRYPOINT ["java", "-Xmx1024M", "-Xms512M", "-jar", "/app/server.jar", "nogui"]
+ENTRYPOINT ["java", "-Xmx1024M", "-Xms512M", "-jar", "server.jar", "nogui"]
