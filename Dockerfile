@@ -18,4 +18,4 @@ EXPOSE 25565
 # ENTRYPOINT [ "/bin/sh", "-c", "/app/entrypoint.sh" ]
 
 # Start the Minecraft server directly
-CMD ["java", "-Xmx1024M", "-Xms512M", "-jar", "server.jar", "nogui"]
+CMD ["java", "-Xmx1024M", "-Xms512M", "-jar", "/app/server.jar", "nogui"]
