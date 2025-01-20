@@ -15,16 +15,9 @@ services:
       # Clients that connect to port 8888 on the host communicate with port 25565 in the container
       - 8888:25565
     
-    # defines environment variables that are passed to the container when it starts.
-    #environment:
-      # accepts the Minecraft EULA (End User License Agreement)
-      # is required by the Minecraft server to start
-      #EULA: "TRUE"
-    
     # mounts volumes (mechanism to persistently store data) between the host and the container 
     volumes:
-      # volume_name_local:containerPath
-      # - /home/szimmermannschmutzler/docker/minecraft_server_data:/app
+      # volume_name:containerPath
       - minecraft-server-volume:/app
     
     # The container will automatically restart if an error occurs that causes the container to terminate.
