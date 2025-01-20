@@ -14,7 +14,7 @@ This Repository was created as part of my training at the Developer Academy.
 ## Technologies
 * **Docker** 24.0.7
     * **Compose** v2.32.4 (module to install, <a href="https://docs.docker.com/compose/">More Information</a>)
-* **Minecraft Server Java Edition** 1.21.4 (server to install, <a href="https://www.minecraft.net/de-de/download/server">More Information</a>)
+* **Minecraft Server Java Edition** 1.21.4 (server to download, <a href="https://www.minecraft.net/de-de/download/server">More Information</a>)
 
 ## Description
 ### Minecraft
@@ -32,9 +32,9 @@ If you want to use mods and/or plugins, there are something to keep in mind:
     - Hybrid Server like <a href="https://mohistmc.com/">Mohist</a> (Forge + Plugins)
 
 ### Minecraft Server Edition
-There is the Java Edition and the Bedrock Edition of Minecraft. Two different versions of the game that differ in technology, features and compatibility.  
+There is the *Java Edition* and the *Bedrock Edition* of Minecraft. Two different versions of the game that differ in technology, features and compatibility.  
   
-This repository works with the **Java Server**:
+This repository containerizes the **Java Server**:
 - only suitable for the PC
 - runs via the Java Runtime Environment (JRE)
 - easy to set up
