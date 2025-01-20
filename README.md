@@ -79,11 +79,6 @@ This repository containerizes the **Java Server**:
 - If you have a Minecraft account: You can connect to the server on your cloud VM from your <a href="https://www.minecraft.net/de-de/download">Java Minecraft client</a> on your computer and play Minecraft.
 
 - Use a <a href="https://mcstatus.io/" >website</a> that offers status checks for Minecraft servers or try to establish a connection to the Minecraft Server using the <a href="https://github.com/py-mine/mcstatus">python `mcstatus` module</a>.
-    - mcstatus.io:
-    <img alt="mcsrv" src="https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/mcsrv.png"></img>
-
-    - python script `mcstatus`:
-
 
 ## Usage
 ### Installation and Preparation
