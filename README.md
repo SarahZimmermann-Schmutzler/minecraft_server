@@ -20,7 +20,7 @@ This Repository was created as part of my training at the Developer Academy.
 ### Minecraft
 Minecraft is a popular sandbox game that allows players to explore, build, and adventure in their own worlds. Alone or in multiplayer mode.
 
-## Minecraft Server
+### Minecraft Server
 A Minecraft server is a program that allows players to play Minecraft online in a multiplayer environment. A server hosts these worlds and allows multiple players to connect and play together at the same time. A Minecraft server typically runs on a dedicated computer or virtual machine and can be operated in various configurations. Players connect to the server via its IP address and port.  
   
 If you want to use mods and/or plugins, there are something to keep in mind:
@@ -31,7 +31,7 @@ If you want to use mods and/or plugins, there are something to keep in mind:
     - Plugin-Server: <a href="https://getbukkit.org/download/spigot">Spigot</a> or <a href="https://papermc.io/">Paper</a>
     - Hybrid Server like <a href="https://mohistmc.com/">Mohist</a> (Forge + Plugins)
 
-## Minecraft Server Edition
+### Minecraft Server Edition
 There is the Java Edition and the Bedrock Edition of Minecraft. Two different versions of the game that differ in technology, features and compatibility.  
   
 This repository works with the **Java Server**:
@@ -41,7 +41,6 @@ This repository works with the **Java Server**:
 - saves resources  
   
 >i: If you are interested in a cross-platform application, for example because you want to play Minecraft on a console, you need the <a href="https://www.minecraft.net/de-de/download/server/bedrock">Bedrock Server</a>.
-
 
 
 ## Getting Started
@@ -72,14 +71,18 @@ This repository works with the **Java Server**:
 - The Minecraft server can be reached under the IP address of your cloud VM on port 8888:
     - http://IP_Address_VM:8888
 
-- If you have a Minecraft account, use the <a href="https://www.minecraft.net/de-de/download">launcher</a> to connect to the server.
-
-- If you want to make sure that the Minecraft server is accessible on the correct port, use a tool like telnet or nc:
+- If you want to make sure that the Minecraft server is accessible on the correct port, you can also use a tool like telnet or nc:
     ```bash
     nc IP_Address_VM 8888
     ```
 
-- Use a <a href="https://mcstatus.io/" >website</a> that offers status checks for Minecraft servers.
+- If you have a Minecraft account: You can connect to the server on your cloud VM from your <a href="https://www.minecraft.net/de-de/download">Java Minecraft client</a> on your computer and play Minecraft.
+
+- Use a <a href="https://mcstatus.io/" >website</a> that offers status checks for Minecraft servers or try to establish a connection to the Minecraft Server using the <a href="https://github.com/py-mine/mcstatus">python `mcstatus` module</a>.
+    - mcstatus.io:
+    <img alt="mcsrv" src="https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/mcsrv.png"></img>
+
+    - python script `mcstatus`:
 
 
 ## Usage
@@ -222,18 +225,23 @@ This repository works with the **Java Server**:
     - Result: The ERR_EMPTY_RESPONSE error message means that the browser tried to communicate with the server but did not receive any data. This is to be expected since a Minecraft Server doesn't send HTTP data that a browser can interpret. The Minecraft server uses Minecraft's own protocol, which is not compatible with a web browser.The Minecraft Server is running correctly and listening on the specified port (e.g. 8888), but it only responds to requests from Minecraft clients, not HTTP requests.  
     <img alt="ip_adress:8888" src="https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/ipaddress.png"></img>  
 
-- If you have a Minecraft account, use the <a href="https://www.minecraft.net/de-de/download">launcher</a> to connect to the server.
-
-- If you want to make sure that the Minecraft server is accessible on the correct port, use a tool like telnet or nc:
+- If you want to make sure that the Minecraft server is accessible on the correct port, you can also use a tool like telnet or nc:
     ```bash
     nc IP_Address_VM 8888
     ```
 
-- Use a <a href="https://mcstatus.io/" >website</a> that offers status checks for Minecraft servers:
+- If you have a Minecraft account: You can connect to the server on your cloud VM from your <a href="https://www.minecraft.net/de-de/download">Java Minecraft client</a> on your computer and play Minecraft.
+
+
+
+- Use a <a href="https://mcstatus.io/" >website</a> that offers status checks for Minecraft servers or try to establish a connection to the Minecraft Server using the <a href="https://github.com/py-mine/mcstatus">python `mcstatus` module</a>.
+    - mcstatus.io:
     <img alt="mcsrv" src="https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/mcsrv.png"></img>
+
+    - python script `mcstatus`:
     
 ## Additional Notes
 <ins>Alternative</ins>: 
-You can use the <a href="https://github.com/itzg/docker-minecraft-server">Docker Minecraft Server</a> that uses the base image `itzg/minecraft-server`. This image already containes the server file and the java environment.  
+You can work with the <a href="https://github.com/itzg/docker-minecraft-server">Docker Minecraft Server</a> that uses the base image `itzg/minecraft-server`. This image already containes the server file and the java environment.  
   
 The <a href="https://minecraft.wiki/w/Tutorial:Setting_up_a_server#Docker">Minecraft Wiki</a> offers a setup for this but points out that the contents of this setup are not supported by Mojang Studios or the Minecraft Wiki.
