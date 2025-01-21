@@ -77,7 +77,7 @@ This repository containerizes the **Java Edition Server**:
 
 - If you want to make sure that the Minecraft server is accessible on the correct port, you can also use a tool like *telnet or nc*:
     ```bash
-    nc IP_Address_VM 8888
+    nc <host-ip> 8888
     ```
 
 - If you have a *Minecraft account*: You can connect to the server on your cloud VM from your <a href="https://www.minecraft.net/de-de/download">Java Minecraft client</a> on your computer and play Minecraft.
@@ -105,7 +105,7 @@ This repository containerizes the **Java Edition Server**:
     ls -l
     ```
     
-    - For the server.jar file it should look like that:
+    - For the `server.jar` file it should look like this:
         - -rwxr-xr-x
     
     - Set execute permissions if they don't exist:
@@ -221,21 +221,21 @@ This repository containerizes the **Java Edition Server**:
 5) Check whether the **server is running** correctly:
 - The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*:
     - http://IP_Address_VM:8888
-    - Result: The ERR_EMPTY_RESPONSE error message means that the browser tried to communicate with the server but did not receive any data. This is to be expected since a Minecraft Server doesn't send HTTP data that a browser can interpret. The Minecraft server uses Minecraft's own protocol, which is not compatible with a web browser.The Minecraft Server is running correctly and listening on the specified port (e.g. 8888), but it only responds to requests from Minecraft clients, not HTTP requests.  
+    - <ins>Result</ins>: The ERR_EMPTY_RESPONSE error message means that the browser tried to communicate with the server but did not receive any data. This is to be expected since a Minecraft Server doesn't send HTTP data that a browser can interpret. The Minecraft server uses Minecraft's own protocol, which is not compatible with a web browser.The Minecraft Server is running correctly and listening on the specified port (e.g. 8888), but it only responds to requests from Minecraft clients, not HTTP requests.  
     <img alt="ip_adress:8888" src="https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/ipaddress.png"></img>  
 
-- If you want to make sure that the Minecraft server is accessible on the correct port, you can also use a tool like *telnet or nc*:
+- If you want to make sure that the Minecraft server is accessible on the correct port, you can also use a tool like *telnet or nc*. If the port is open, the connection is established (e.g. with an empty or undefined response):
     ```bash
-    nc IP_Address_VM 8888
+    nc <host-ip> 8888
     ```
 
 - If you have a *Minecraft account*: You can connect to the server on your cloud VM from your <a href="https://www.minecraft.net/de-de/download">Java Minecraft client</a> on your computer and play Minecraft.
 
 - Use a <a href="https://mcstatus.io/" >website</a> that offers status checks for Minecraft Servers or try to establish a connection to the Minecraft Server using the <a href="https://github.com/py-mine/mcstatus">python `mcstatus` module</a>.
-    - mcstatus.io:
+    - <ins>mcstatus.io</ins>:
     <img alt="mcsrv" src="https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/mcsrv.png"></img>
 
-    - python module `mctatus`:
+    - <ins>python module `mctatus`</ins>:
         - Intall the module:
         ```bash
         python -m pip install mcstatus
@@ -268,7 +268,7 @@ This repository containerizes the **Java Edition Server**:
         # print(f"The server has the following players online: {', '.join(query.players.names)}")
         ```
 
-        - Result:  
+        - <ins>Result</ins>:  
         <img alt="mc_status" src="https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/mc_status.png"></img>
     
 ## Additional Notes
