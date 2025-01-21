@@ -16,6 +16,10 @@ This Repository was created as part of my training at the Developer Academy.
     * **Compose** v2.32.4 (module to install, <a href="https://docs.docker.com/compose/">More Information</a>)
 * **Minecraft Server Java Edition** 1.21.4 (server to download, <a href="https://www.minecraft.net/de-de/download/server">More Information</a>)
 
+For testing the server with the python mcstatus module:
+* **Python** 3.12.2
+    * **mcstatus** 11.1.1 (module to install, <a href="https://github.com/py-mine/mcstatus">More Information</a>)
+
 ## Description
 ### Minecraft
 Minecraft is a popular sandbox game that allows players to explore, build, and adventure in their own worlds. Alone or in multiplayer mode.
@@ -233,7 +237,41 @@ This repository containerizes the **Java Server**:
     - mcstatus.io:
     <img alt="mcsrv" src="https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/mcsrv.png"></img>
 
-    - python script `mcstatus`:
+    - python module `mctatus`:
+        - Intall the module:
+        ```bash
+        python -m pip install mcstatus
+        ```
+        - Write a python script. A proper template is given <a href="https://github.com/py-mine/mcstatus?tab=readme-ov-file#java-edition">here</a>:
+        ```bash
+        from mcstatus import JavaServer
+        # status for Java Edition Server
+
+        # You can pass the same address you'd enter into the address field in minecraft into the 'lookup' function
+        # If you know the host and port, you may skip this and use JavaServer("example.org", 1234)
+        # server = JavaServer.lookup("example.org:1234")
+        server = JavaServer("IP_ADDRESS_VM", 8888)
+
+        # 'status' is supported by all Minecraft servers that are version 1.7 or higher.
+        # Don't expect the player list to always be complete, because many servers run
+        # plugins that hide this information or limit the number of players returned or even
+        # alter this list to contain fake players for purposes of having a custom message here.
+        status = server.status()
+        print(f"The server has {status.players.online} player(s) online and replied in {status.latency} ms")
+
+        # 'ping' is supported by all Minecraft servers that are version 1.7 or higher.
+        # It is included in a 'status' call, but is also exposed separate if you do not require the additional info.
+        latency = server.ping()
+        print(f"The server replied in {latency} ms")
+
+        # 'query' has to be enabled in a server's server.properties file!
+        # It may give more information than a ping, such as a full player list or mod information.
+        # query = server.query()
+        # print(f"The server has the following players online: {', '.join(query.players.names)}")
+        ```
+
+        - Result:  
+        <img alt="mc_status" src="https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/mc_status.png"></img>
     
 ## Additional Notes
 <ins>Alternative</ins>: 
