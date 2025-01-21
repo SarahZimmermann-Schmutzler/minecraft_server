@@ -2,7 +2,7 @@
 
 This repository serves as a guide for containerizing a simple **Minecraft Server: Java Edition** using **Docker Compose**.  
   
-This Repository was created as part of my training at the Developer Academy.  
+This Repository was created as part of my training at the **Developer Academy**.  
 
 ## Table of Contents
 1. <a href="#technologies">Technologies</a>  
@@ -16,29 +16,29 @@ This Repository was created as part of my training at the Developer Academy.
     * **Compose** v2.32.4 (module to install, <a href="https://docs.docker.com/compose/">More Information</a>)
 * **Minecraft Server Java Edition** 1.21.4 (server to download, <a href="https://www.minecraft.net/de-de/download/server">More Information</a>)
 
-For testing the server with the python mcstatus module:
+<ins>Addition</ins>: Testing the server with the **python mcstatus module**:
 * **Python** 3.12.2
     * **mcstatus** 11.1.1 (module to install, <a href="https://github.com/py-mine/mcstatus">More Information</a>)
 
 ## Description
 ### Minecraft
-Minecraft is a popular sandbox game that allows players to explore, build, and adventure in their own worlds. Alone or in multiplayer mode.
+**Minecraft** is a popular sandbox game that allows players to explore, build, and adventure in their own worlds. Alone or in multiplayer mode.
 
 ### Minecraft Server
-A Minecraft server is a program that allows players to play Minecraft online in a multiplayer environment. A server hosts these worlds and allows multiple players to connect and play together at the same time. A Minecraft server typically runs on a dedicated computer or virtual machine and can be operated in various configurations. Players connect to the server via its IP address and port.  
+A **Minecraft Server** is a program that allows players to play Minecraft online in a multiplayer environment. A server hosts these worlds and allows multiple players to connect and play together at the same time. A Minecraft Server typically runs on a dedicated computer or virtual machine and can be operated in various configurations. Players connect to the server via its IP address and port.  
   
-If you want to use mods and/or plugins, there are something to keep in mind:
-- Standard Minecraft server software (vanilla) - that is used here - does not support mods, only the basic functions of the game.
+If you want to use **mods and/or plugins**, there are something to keep in mind:
+- **Standard Minecraft Server** software (vanilla) - that is used here - does not support mods, only the basic functions of the game.
     - You can customize the game a little using data packs and configuration files (like <a href="https://minecraft.wiki/w/Server.properties">server.properties</a>) (e.g. the number of players allowed, etc.)
-- To use mods and/or plugins you must use an advanced server:
-    - Mod-Server: <a href="https://files.minecraftforge.net/net/minecraftforge/forge/">Forge</a> or <a href="https://fabricmc.net/use/server/">Fabric</a>
-    - Plugin-Server: <a href="https://getbukkit.org/download/spigot">Spigot</a> or <a href="https://papermc.io/">Paper</a>
-    - Hybrid Server like <a href="https://mohistmc.com/">Mohist</a> (Forge + Plugins)
+- To use mods and/or plugins you must use an **advanced server**:
+    - <ins>Mod-Server</ins>: <a href="https://files.minecraftforge.net/net/minecraftforge/forge/">Forge</a> or <a href="https://fabricmc.net/use/server/">Fabric</a>
+    - <ins>Plugin-Server</ins>: <a href="https://getbukkit.org/download/spigot">Spigot</a> or <a href="https://papermc.io/">Paper</a>
+    - <ins>Hybrid Server</ins> like <a href="https://mohistmc.com/">Mohist</a> (Forge + Plugins)
 
 ### Minecraft Server Edition
-There is the *Java Edition* and the *Bedrock Edition* of Minecraft. Two different versions of the game that differ in technology, features and compatibility.  
+There is the *Java Edition* and the *Bedrock Edition* of Minecraft - two different versions of the game that differ in technology, features and compatibility.  
   
-This repository containerizes the **Java Server**:
+This repository containerizes the **Java Edition Server**:
 - only suitable for the PC
 - runs via the Java Runtime Environment (JRE)
 - easy to set up
@@ -56,33 +56,33 @@ This repository containerizes the **Java Server**:
     git clone git@github.com:SarahZimmermann-Schmutzler/minecraft_server.git
     ```
 
-2) Download the Java Server file from the Minecraft webpage. For copyright reasons, the server file will not be uploaded to github.:
+2) **Download the Java Server file** from the Minecraft webpage. For copyright reasons, the server file will not be uploaded to github.:
     ```bash
     https://www.minecraft.net/de-de/download/server
     ```
 
-3) Make the file executable if necessary
+3) Make the file **executable** if necessary:
     ```bash
     chmod +x server.jar
     ```
 
-4) Build and start the container that runs in the background (detached mode):
+4) **Build and start the container** in the background (detached mode):
     ```bash
     docker compose up --build -d
     ```
 
-5) Check whether the server is running correctly:
-- The Minecraft server can be reached under the IP address of your cloud VM on port 8888:
+5) Check whether the **server is running** correctly:
+- The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*:
     - http://IP_Address_VM:8888
 
-- If you want to make sure that the Minecraft server is accessible on the correct port, you can also use a tool like telnet or nc:
+- If you want to make sure that the Minecraft server is accessible on the correct port, you can also use a tool like *telnet or nc*:
     ```bash
     nc IP_Address_VM 8888
     ```
 
-- If you have a Minecraft account: You can connect to the server on your cloud VM from your <a href="https://www.minecraft.net/de-de/download">Java Minecraft client</a> on your computer and play Minecraft.
+- If you have a *Minecraft account*: You can connect to the server on your cloud VM from your <a href="https://www.minecraft.net/de-de/download">Java Minecraft client</a> on your computer and play Minecraft.
 
-- Use a <a href="https://mcstatus.io/" >website</a> that offers status checks for Minecraft servers or try to establish a connection to the Minecraft Server using the <a href="https://github.com/py-mine/mcstatus">python `mcstatus` module</a>.
+- Use a <a href="https://mcstatus.io/" >website</a> that offers status checks for Minecraft Servers or try to establish a connection to the Minecraft Server using the <a href="https://github.com/py-mine/mcstatus">python `mcstatus` module</a>.
 
 ## Usage
 ### Installation and Preparation
@@ -92,14 +92,14 @@ This repository containerizes the **Java Server**:
     git clone git@github.com:SarahZimmermann-Schmutzler/minecraft_server.git
     ```
 
-2) Download the Java Server file from the Minecraft webpage. For copyright reasons, the server file will not be uploaded to github.:
+2) **Download the Java Server file** from the Minecraft webpage. For copyright reasons, the server file will not be uploaded to github.:
     ```bash
     https://www.minecraft.net/de-de/download/server
     ```
     - Don't forget to move the server file to the project folder, e.g. from Windows PC to a VM via SSH:
         - scp /path/to/minecraft_server/server.jar username@vm-ip:/path/to/minecraft_server
 
-3) It may be that the server file needs to be made executable:
+3) It may be that the server file needs to be made **executable**:
     - View rights of the files in the directory:
     ```bash
     ls -l
@@ -197,7 +197,7 @@ This repository containerizes the **Java Server**:
     ```
     - You can read about which properties can be changed <a href="https://minecraft.wiki/w/Server.properties">here</a>.
 
-4) Build and start the container that runs in the background (detached mode):
+4) **Build and start the container** in the background (detached mode):
     ```bash
     docker compose up --build -d
     ```
@@ -218,22 +218,20 @@ This repository containerizes the **Java Server**:
         docker compose ps
         ```
 
-5) Check whether the server is running correctly:
-- The Minecraft server can be reached under the IP address of your cloud VM on port 8888:
+5) Check whether the **server is running** correctly:
+- The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*:
     - http://IP_Address_VM:8888
     - Result: The ERR_EMPTY_RESPONSE error message means that the browser tried to communicate with the server but did not receive any data. This is to be expected since a Minecraft Server doesn't send HTTP data that a browser can interpret. The Minecraft server uses Minecraft's own protocol, which is not compatible with a web browser.The Minecraft Server is running correctly and listening on the specified port (e.g. 8888), but it only responds to requests from Minecraft clients, not HTTP requests.  
     <img alt="ip_adress:8888" src="https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/ipaddress.png"></img>  
 
-- If you want to make sure that the Minecraft server is accessible on the correct port, you can also use a tool like telnet or nc:
+- If you want to make sure that the Minecraft server is accessible on the correct port, you can also use a tool like *telnet or nc*:
     ```bash
     nc IP_Address_VM 8888
     ```
 
-- If you have a Minecraft account: You can connect to the server on your cloud VM from your <a href="https://www.minecraft.net/de-de/download">Java Minecraft client</a> on your computer and play Minecraft.
+- If you have a *Minecraft account*: You can connect to the server on your cloud VM from your <a href="https://www.minecraft.net/de-de/download">Java Minecraft client</a> on your computer and play Minecraft.
 
-
-
-- Use a <a href="https://mcstatus.io/" >website</a> that offers status checks for Minecraft servers or try to establish a connection to the Minecraft Server using the <a href="https://github.com/py-mine/mcstatus">python `mcstatus` module</a>.
+- Use a <a href="https://mcstatus.io/" >website</a> that offers status checks for Minecraft Servers or try to establish a connection to the Minecraft Server using the <a href="https://github.com/py-mine/mcstatus">python `mcstatus` module</a>.
     - mcstatus.io:
     <img alt="mcsrv" src="https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/mcsrv.png"></img>
 
