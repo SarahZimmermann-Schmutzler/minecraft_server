@@ -171,29 +171,29 @@ This repository containerizes the **Java Edition Server**:
 
     # container configuration
     services:
-    # name of the service
-    mc-server:
-        # creates an image from the Dockerfile in the current directory
-        build: .
+        # name of the service
+        mc-server:
+            # creates an image from the Dockerfile in the current directory
+            build: .
     
-        # defines port forwarding between host and container
-        ports:
-        # hostPort:containerPort
-        # forwards port 25565 on the container to port 8888 on the host
-        # Clients that connect to port 8888 on the host communicate with port 25565 in the container
-        - 8888:25565
+            # defines port forwarding between host and container
+            ports:
+            # hostPort:containerPort
+            # forwards port 25565 on the container to port 8888 on the host
+            # Clients that connect to port 8888 on the host communicate with port 25565 in the container
+                - 8888:25565
     
-        # mounts volumes (mechanism to persistently store data) between the host and the container 
-        volumes:
-        # volume_name:containerPath
-        - minecraft-server-volume:/app
+            # mounts volumes (mechanism to persistently store data) between the host and the container 
+            volumes:
+            # volume_name:containerPath
+                - minecraft-server-volume:/app
     
-        # The container will automatically restart if an error occurs that causes the container to terminate.
-        # If the container is stopped manually, it will not restart.
-        restart: on-failure
+            # The container will automatically restart if an error occurs that causes the container to terminate.
+            # If the container is stopped manually, it will not restart.
+            restart: on-failure
 
     volumes:
-    minecraft-server-volume:
+        minecraft-server-volume:
     ```
 
 1. The `server.properties` file plays a central role in setting up a Minecraft Java server. It contains the configuration options that allow you to customize the behavior of the server, the game rules and the technical characteristics:
