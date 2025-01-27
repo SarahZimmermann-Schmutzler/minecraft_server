@@ -139,7 +139,7 @@ This repository containerizes the **Java Edition Server**:
 
 ### Containerization with Docker Compose
 
-1. The `Dockerfile` describes how a single Docker image should be created. It serves as the basis for a service in the Docker Compose file:
+1. The [`Dockerfile`](./Dockerfile) describes how a single Docker image should be created. It serves as the basis for a service in the Docker Compose file:
 
     ```bash
     # base image: contains a Java environment because the Minecraft server requires a JVM (Java Virtual Machine).
@@ -163,7 +163,7 @@ This repository containerizes the **Java Edition Server**:
     ENTRYPOINT ["java", "-Xmx1024M", "-Xms512M", "-jar", "/app/server.jar", "nogui"]
     ```
 
-1. The `compose.yaml` is responsible for managing and orchestrating the Minecraft Server container. It defines what configurations it should have:
+1. The [`compose.yaml`](./compose.yaml) is responsible for managing and orchestrating the Minecraft Server container. It defines what configurations it should have:
 
     ```bash
     # version of the Compose format used by Docker Compose
@@ -196,7 +196,7 @@ This repository containerizes the **Java Edition Server**:
         minecraft-server-volume:
     ```
 
-1. The `server.properties` file plays a central role in setting up a Minecraft Java server. It contains the configuration options that allow you to customize the behavior of the server, the game rules and the technical characteristics:
+1. The [`server.properties`](./server.properties) file plays a central role in setting up a Minecraft Java server. It contains the configuration options that allow you to customize the behavior of the server, the game rules and the technical characteristics:
 
     ```bash
     ## Server Security
