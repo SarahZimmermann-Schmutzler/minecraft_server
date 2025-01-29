@@ -93,8 +93,7 @@ This repository containerizes the **Java Edition Server**:
 * Use a [website](https://mcstatus.io/) that offers status checks for Minecraft Servers or try to establish a connection to the Minecraft Server using the [python `mcstatus` module](https://github.com/py-mine/mcstatus).
 
 > [!NOTE]
-> The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*:
-    > http://IP_Address_VM:8888
+> The Minecraft server can be reached under the **IP address of your cloud VM on port 8888**: `http://IP_Address_VM:8888`
 
 ## Usage
 
@@ -299,9 +298,8 @@ This repository containerizes the **Java Edition Server**:
         ![mc_status](./mc_status.png)
 
 > [!NOTE]
-> The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*:
-> http://IP_Address_VM:8888
-> <ins>Result</ins>: The ERR_EMPTY_RESPONSE error message means that the browser tried to communicate with the server but did not receive any data. This is to be expected since a Minecraft Server doesn't send HTTP data that a browser can interpret. The Minecraft server uses Minecraft's own protocol, which is not compatible with a web browser.The Minecraft Server is running correctly and listening on the specified port (e.g. 8888), but it only responds to requests from Minecraft clients, not HTTP requests.  
+> The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*: `http://IP_Address_VM:8888`.  
+> The **ERR_EMPTY_RESPONSE** error message means that the browser tried to communicate with the server but did not receive any data. This **is to be expected** since a Minecraft Server doesn't send HTTP data that a browser can interpret. The Minecraft server uses Minecraft's own protocol, which is not compatible with a web browser.The Minecraft Server is running correctly and listening on the specified port (e.g. 8888), but it only responds to requests from Minecraft clients, not HTTP requests.  
 > ![ip_address:8888](./ipaddress.png)
 
 ## Additional Notes
