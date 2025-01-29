@@ -88,18 +88,13 @@ This repository containerizes the **Java Edition Server**:
 
 1. Check whether the **server is running** correctly:
 
-* The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*:
-  * http://IP_Address_VM:8888
-
-* If you want to make sure that the Minecraft server is accessible on the correct port, you can also use a tool like *telnet or nc*:
-
-    ```bash
-    nc <host-ip> 8888
-    ```
-
 * If you have a *Minecraft account*: You can connect to the server on your cloud VM from your [Java Minecraft client](https://www.minecraft.net/de-de/download) on your computer and play Minecraft.
 
 * Use a [website](https://mcstatus.io/) that offers status checks for Minecraft Servers or try to establish a connection to the Minecraft Server using the [python `mcstatus` module](https://github.com/py-mine/mcstatus).
+
+> [!NOTE]
+> The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*:
+> http://IP_Address_VM:8888
 
 ## Usage
 
@@ -257,17 +252,6 @@ This repository containerizes the **Java Edition Server**:
 
 1. Check whether the **server is running** correctly:
 
-* The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*:
-  * http://IP_Address_VM:8888
-  * <ins>Result</ins>: The ERR_EMPTY_RESPONSE error message means that the browser tried to communicate with the server but did not receive any data. This is to be expected since a Minecraft Server doesn't send HTTP data that a browser can interpret. The Minecraft server uses Minecraft's own protocol, which is not compatible with a web browser.The Minecraft Server is running correctly and listening on the specified port (e.g. 8888), but it only responds to requests from Minecraft clients, not HTTP requests.  
-    ![ip_address:8888](./ipaddress.png)  
-
-* If you want to make sure that the Minecraft server is accessible on the correct port, you can also use a tool like *telnet or nc*. If the port is open, the connection is established (e.g. with an empty or undefined response):
-
-    ```bash
-    nc <host-ip> 8888
-    ```
-
 * If you have a *Minecraft account*: You can connect to the server on your cloud VM from your [Java Minecraft client](https://www.minecraft.net/de-de/download) on your computer and play Minecraft.
 
 * Use a [website](https://mcstatus.io/) that offers status checks for Minecraft Servers or try to establish a connection to the Minecraft Server using the [python `mcstatus` module](https://github.com/py-mine/mcstatus).
@@ -313,6 +297,12 @@ This repository containerizes the **Java Edition Server**:
 
     * <ins>Result</ins>:  
         ![mc_status](./mc_status.png)
+
+> [!NOTE]
+> The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*:
+> http://IP_Address_VM:8888
+> <ins>Result</ins>: The ERR_EMPTY_RESPONSE error message means that the browser tried to communicate with the server but did not receive any data. This is to be expected since a Minecraft Server doesn't send HTTP data that a browser can interpret. The Minecraft server uses Minecraft's own protocol, which is not compatible with a web browser.The Minecraft Server is running correctly and listening on the specified port (e.g. 8888), but it only responds to requests from Minecraft clients, not HTTP requests.  
+> ![ip_address:8888](./ipaddress.png)
 
 ## Additional Notes
 
