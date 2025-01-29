@@ -94,7 +94,7 @@ This repository containerizes the **Java Edition Server**:
 
 > [!NOTE]
 > The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*:
-> http://IP_Address_VM:8888
+    > http://IP_Address_VM:8888
 
 ## Usage
 
