@@ -101,7 +101,7 @@ This section provides a fast and **minimal setup guide** for using the tools in 
 
 ### Installation and Preparation
 
-1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the project to your platform if you just want to use it:
+1. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) the project to your platform:
     * <ins>Example</ins>: Clone the repo e.g. using an SSH-Key:  
 
     ```bash
@@ -135,89 +135,11 @@ This section provides a fast and **minimal setup guide** for using the tools in 
 
 ### Containerization with Docker Compose
 
-1. The [`Dockerfile`](./Dockerfile) describes how a single Docker image should be created. It serves as the basis for a service in the Docker Compose file:
+1. The [`Dockerfile`](./Dockerfile) describes how a single Docker image should be created. It serves as the basis for a service in the Docker Compose file.
 
-    ```bash
-    # base image: contains a Java environment because the Minecraft server requires a JVM (Java Virtual Machine).
-    FROM openjdk:21-jdk-slim
+1. The [`compose.yaml`](./compose.yaml) is responsible for managing and orchestrating the Minecraft Server container. It defines what configurations it should have.
 
-    # directory on the container that contains all the data
-    WORKDIR /app
-
-    # all contents of the current directory are copied to the folder named under the variable WORKDIR
-    COPY . $WORKDIR
-
-    #accepts the Minecraft EULA (End User License Agreement)
-    # is required by the Minecraft server to start
-    RUN echo "eula=true" > /app/eula.txt
-
-    # port of the container that is opened for external access
-    # 25565 is the standard port of the Minecraft Server
-    EXPOSE 25565
-
-    # Start the Minecraft server directly
-    ENTRYPOINT ["java", "-Xmx1024M", "-Xms512M", "-jar", "/app/server.jar", "nogui"]
-    ```
-
-1. The [`compose.yaml`](./compose.yaml) is responsible for managing and orchestrating the Minecraft Server container. It defines what configurations it should have:
-
-    ```bash
-    # version of the Compose format used by Docker Compose
-    version: '3.9'
-
-    # container configuration
-    services:
-        # name of the service
-        mc-server:
-            # creates an image from the Dockerfile in the current directory
-            build: .
-    
-            # defines port forwarding between host and container
-            ports:
-            # hostPort:containerPort
-            # forwards port 25565 on the container to port 8888 on the host
-            # Clients that connect to port 8888 on the host communicate with port 25565 in the container
-                - 8888:25565
-    
-            # mounts volumes (mechanism to persistently store data) between the host and the container 
-            volumes:
-            # volume_name:containerPath
-                - minecraft-server-volume:/app
-    
-            # The container will automatically restart if an error occurs that causes the container to terminate.
-            # If the container is stopped manually, it will not restart.
-            restart: on-failure
-
-    volumes:
-        minecraft-server-volume:
-    ```
-
-1. The [`server.properties`](./server.properties) file plays a central role in setting up a Minecraft Java server. It contains the configuration options that allow you to customize the behavior of the server, the game rules and the technical characteristics:
-
-    ```bash
-    ## Server Security
-
-    # With a whitelist enabled, users not on the whitelist cannot connect. Ops are automatically whitelisted.
-    white-list=true
-
-
-    ## World and biome settings
-
-    # Sets the starting value for the world.
-    # The coordinates X: -1883 / Z: 263 brings you to a Biome with Forest, Beach and River.
-    level-seed=7777777777777777777
-
-    # This determines the server-side viewing distance.
-    # 10 is the default/recommended value - a lower value saves resources.
-    view-distance=6
-
-
-    ## Game mechanics
-
-    # The maximum number of players that can play on the server at the same time.
-    # 20 is the default value. The fewer players play, the better the performance at low resources.
-    max-players=5
-    ```
+1. The [`server.properties`](./server.properties) file plays a central role in setting up a Minecraft Java server. It contains the configuration options that allow you to customize the behavior of the server, the game rules and the technical characteristics.
 
     * You can read about which properties can be changed [here](https://minecraft.wiki/w/Server.properties).
 
@@ -269,34 +191,7 @@ This section provides a fast and **minimal setup guide** for using the tools in 
 
     * Write a python script. A proper template is given [here](https://github.com/py-mine/mcstatus?tab=readme-ov-file#java-edition):
 
-        ```bash
-        from mcstatus import JavaServer
-        # status for Java Edition Server
-
-        # You can pass the same address you'd enter into the address field in minecraft into the 'lookup' function
-        # If you know the host and port, you may skip this and use JavaServer("example.org", 1234)
-        # server = JavaServer.lookup("example.org:1234")
-        server = JavaServer("IP_ADDRESS_VM", 8888)
-
-        # 'status' is supported by all Minecraft servers that are version 1.7 or higher.
-        # Don't expect the player list to always be complete, because many servers run
-        # plugins that hide this information or limit the number of players returned or even
-        # alter this list to contain fake players for purposes of having a custom message here.
-        status = server.status()
-        print(f"The server has {status.players.online} player(s) online and replied in {status.latency} ms")
-
-        # 'ping' is supported by all Minecraft servers that are version 1.7 or higher.
-        # It is included in a 'status' call, but is also exposed separate if you do not require the additional info.
-        latency = server.ping()
-        print(f"The server replied in {latency} ms")
-
-        # 'query' has to be enabled in a server's server.properties file!
-        # It may give more information than a ping, such as a full player list or mod information.
-        # query = server.query()
-        # print(f"The server has the following players online: {', '.join(query.players.names)}")
-        ```
-
-    * <ins>Result</ins>:  
+      * <ins>Result</ins>:  
         ![mc_status](./mc_status.png)
 
 > [!NOTE]
