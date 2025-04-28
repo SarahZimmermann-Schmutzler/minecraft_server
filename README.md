@@ -135,11 +135,11 @@ This section provides a fast and **minimal setup guide** for using the tools in 
 
 ### Containerization with Docker Compose
 
-1. The [`Dockerfile`](./Dockerfile) describes how a single Docker image should be created. It serves as the basis for a service in the Docker Compose file.
+1. The [`Dockerfile`](https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/Dockerfile) describes how a single Docker image should be created. It serves as the basis for a service in the Docker Compose file.
 
-1. The [`compose.yaml`](./compose.yaml) is responsible for managing and orchestrating the Minecraft Server container. It defines what configurations it should have.
+1. The [`compose.yaml`](https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/compose.yaml) is responsible for managing and orchestrating the Minecraft Server container. It defines what configurations it should have.
 
-1. The [`server.properties`](./server.properties) file plays a central role in setting up a Minecraft Java server. It contains the configuration options that allow you to customize the behavior of the server, the game rules and the technical characteristics.
+1. The [`server.properties`](https://github.com/SarahZimmermann-Schmutzler/minecraft_server/blob/main/server.properties) file plays a central role in setting up a Minecraft Java server. It contains the configuration options that allow you to customize the behavior of the server, the game rules and the technical characteristics.
 
     * You can read about which properties can be changed [here](https://minecraft.wiki/w/Server.properties).
 
@@ -180,7 +180,7 @@ This section provides a fast and **minimal setup guide** for using the tools in 
 * Use a [website](https://mcstatus.io/) that offers status checks for Minecraft Servers or try to establish a connection to the Minecraft Server using the [python `mcstatus` module](https://github.com/py-mine/mcstatus).
 
   * <ins>mcstatus.io</ins>:
-    ![mcsrv](./mcsrv.png)
+    ![mcsrv](https://raw.githubusercontent.com/SarahZimmermann-Schmutzler/minecraft_server/main/mcsrv.png)
 
   * <ins>python module `mctatus`</ins>:
     * Intall the module:
@@ -192,12 +192,12 @@ This section provides a fast and **minimal setup guide** for using the tools in 
     * Write a python script. A proper template is given [here](https://github.com/py-mine/mcstatus?tab=readme-ov-file#java-edition):
 
       * <ins>Result</ins>:  
-        ![mc_status](./mc_status.png)
+        ![mc_status](https://raw.githubusercontent.com/SarahZimmermann-Schmutzler/minecraft_server/main/mc_status.png)
 
 > [!NOTE]
 > The Minecraft server can be reached under the *IP address of your cloud VM on port 8888*: `http://IP_Address_VM:8888`.  
 > The **ERR_EMPTY_RESPONSE** error message means that the browser tried to communicate with the server but did not receive any data. This **is to be expected** since a Minecraft Server doesn't send HTTP data that a browser can interpret. The Minecraft server uses Minecraft's own protocol, which is not compatible with a web browser.The Minecraft Server is running correctly and listening on the specified port (e.g. 8888), but it only responds to requests from Minecraft clients, not HTTP requests.  
-> ![ip_address:8888](./ipaddress.png)
+> ![ip_address:8888](https://raw.githubusercontent.com/SarahZimmermann-Schmutzler/minecraft_server/main/ipaddress.png)
 
 ## Additional Notes
 
